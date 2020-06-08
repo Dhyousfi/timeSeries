@@ -141,7 +141,7 @@ class DataManager:
             data_reloaded = True # Turn "success" to false if there is a problem.
         else:
             # Load metadata
-            metadata = yaml.load(open(join(data_dir, 'metadata'), 'r'))
+            metadata = yaml.load(open(join(data_dir, 'metadata'), 'r'), Loader=yaml.FullLoader)
             self.stride = metadata['stride']
             self.horizon = metadata['horizon']
             self.ycol0 = metadata['ycol0']
